@@ -1,8 +1,5 @@
 $(document).ready(function () {
-    $("#clockForm").submit(function (event) {
-        event.preventDefault();
-        addClock();
-    });
+    $("#clockForm").submit(addClock);
 });
 
 class Clock {
@@ -36,7 +33,7 @@ function addClock() {
 
     const newClock = new Clock(hours, minutes, seconds, country);
     clocks.push(newClock);
-
+    
     document.getElementById('clockForm').reset();
     displayClocks();
     return false;
@@ -50,7 +47,7 @@ function displayClocks() {
     }
 
     else {
-
+        console.log(clocks);
         const clockListDiv = document.getElementById('clockList');
         clockListDiv.innerHTML = '';
 
