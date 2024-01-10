@@ -33,7 +33,7 @@ function addClock() {
 
     const newClock = new Clock(hours, minutes, seconds, country);
     clocks.push(newClock);
-    
+
     document.getElementById('clockForm').reset();
     displayClocks();
     return false;
@@ -41,16 +41,14 @@ function addClock() {
 }
 
 function displayClocks() {
-
+    let clockListDiv = document.getElementById('clockList');
+    
     if (clocks.length != 5) {
+        clockListDiv.innerHTML = '';
         return;
     }
 
     else {
-        console.log(clocks);
-        const clockListDiv = document.getElementById('clockList');
-        clockListDiv.innerHTML = '';
-
         clocks.forEach(clock_i => {
             const clockDiv = document.createElement('div');
             clockDiv.textContent = `Country: ${clock_i.country}, Time: ${clock_i.show()}, Seconds: ${clock_i.convertToSeconds()}`;
