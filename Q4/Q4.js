@@ -1,3 +1,5 @@
+////////Q1////////
+
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -13,6 +15,7 @@ class Point {
     }
 }
 
+////////Q2////////
 function CheckIfExist(pointArray, x, y) {
     for (const point of pointArray) {
         if (point.x === x && point.y === y) {
@@ -31,7 +34,7 @@ console.log(CheckIfExist(pointsArray1, 1, 4)); // ידפיס: true
 // דוגמה שתחזיר שקר
 console.log(CheckIfExist(pointsArray1, 10, 4)); // ידפיס: false
 
-//////////////////////////////////////
+//////////////Q3////////////////////
 
 function CheckIfExistEquals(pointArray, pointObj) {
     for (const point_i of pointArray) {
@@ -51,7 +54,7 @@ console.log(CheckIfExistEquals(pointsArray1, p4));
 let p5 = new Point(7, 7);
 console.log(CheckIfExistEquals(pointsArray1, p5));
 
-//////////////////////////////////////
+/////////////Q4////////////////////
 
 function totalDistance(pointArray) {
     let RouteLength = 0;
