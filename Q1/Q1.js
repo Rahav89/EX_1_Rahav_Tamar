@@ -1,39 +1,57 @@
 class Counter {
-    constructor(initialize) {
-        this.value = initialize;
+    constructor(count) {
+        this.count = count;
     }
 
-    increment() {
-        this.value++;
+    Initialize(value) {
+        this.count = value;
     }
 
-    go() {
-        let printNumber = '';
-        for (let i = 0; i <= this.value; i++) {
-            printNumber += i + ' ';
+    Increment() {
+        return ++this.count;
+    }
+
+    Go() {
+        let strCount = "";
+        for (let i = 0; i <= this.count; i++) {
+            strCount = strCount + `  ${i}`;
         }
-        return printNumber;
+        if ($('#numDivID').length > 0) {
+            $('#numDivID').text(strCount);
+        }
+        else {
+            var numDiv = document.createElement('div');
+            numDiv.id = 'numDivID';
+            numDiv.textContent = strCount;
+            numDiv.style.color = "blue";
+            document.body.appendChild(numDiv);
+        }
     }
 }
 
-let counter;
+let counterObj;
 
-function startCounter() {
-    const initialize = parseInt(document.getElementById('initialize').value) || 0;
-    console.log(initialize)
-    counter = new Counter(initialize);
-}
-
-function incrementCounter() {
-    if (counter) {
-        counter.increment();
-        document.getElementById('initialize').value = counter.value;
+$('#startBtn').click(function () {
+    inputCount = $('#inputCount').val();
+    //check if the input is not a number on an empty string
+    if (isNaN(inputCount) || inputCount == "") {
+        alert("Please enter a number only");
     }
-}
-
-function displayNumbers() {
-    if (counter) {
-        const printNumberElement = document.getElementById('printNumber');
-        printNumberElement.textContent = counter.go();
+    else {
+        counterObj = new Counter(inputCount);
     }
-}
+
+});
+
+$('#plusBtn').click(function () {
+    if (counterObj) //Only if there is a 'counter' object
+    {
+        $('#inputCount').val(counterObj.Increment());
+    }
+});
+
+$('#goBtn').click(function () {
+    if (counterObj) {
+        counterObj.Go();
+    }
+});
