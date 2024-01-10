@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clock</title>
+
+    <link href="Q3.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Clock Form</h1>
+    <div class="container">
+        <form id="colokForm">
+
+            <div class="form-group">
+                <label for="hours">Hours: </label>
+                <input type="number" id="hours" required>
+            </div>
+
+            <div class="form-group">
+                <label for="minutes">Minutes:</label>
+                <input type="number" id="minutes" required>
+            </div>
+
+            <div class="form-group">
+                <label for="seconds">Seconds:</label>
+                <input type="number" id="seconds" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">country:</label>
+                <input type="text" id="country" required>
+            </div>
+
+
+            <button type="button" class="btnManage" onclick="addClock()">Add Clock</button>
+
+        </form>
+    </div>
+
+    <div id="clockList"></div>
+    
+    <script src="Q3.js"></script>
+</body>
+
+</html>

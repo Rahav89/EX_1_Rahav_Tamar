@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Duck Info</title>
+    <link href="Q2.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Duck Info</h1>
+    <div class="container">
+        <form id="duckForm">
+            <div class="form-group">
+                <label for="name"><span class="red-star">★ </span>Name:</label>
+                <input type="text" class="form-control" id="name" required="">
+            </div>
+
+            <div class="form-group">
+                <label for="color"><span class="red-star">★ </span> Color:</label>
+                <input type="text" class="form-control" id="color" required="">
+            </div>
+
+            <div class="form-group">
+                <label for="age"><span class="red-star">★ </span> Age:</label>
+                <input type="text" class="form-control" id="age" required="">
+            </div>
+
+            <div class="form-group">
+                <label for="weight"><span class="red-star">★ </span> Weight:</label>
+                <input type="text" class="form-control" id="weight" required="">
+            </div>
+
+            <div class="form-group">
+                <label for="image"><span class="red-star">★ </span>Image URL:</label>
+                <input type="text" class="form-control" id="image" required="">
+            </div>
+
+            <input id="createDuck" type="button" value="Create Duck" onclick="createDuck()" class="btnManage">
+        </form>
+    </div>
+
+    <div id="duckInfo"></div>
+    <p id="duckQTime"></p>
+
+    <button id="showDuck" type="button" onclick="showDuck()" class="btnManage" style="visibility:hidden">Show</button>
+    <button id="Quack"  type="button" onclick="Quack()" class="btnManage" style="visibility:hidden">Quack</button>
+
+    <audio id="quackSound">
+        <source src="quack_sound.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="Q2.js"></script>
+</body>
+
+</html>
