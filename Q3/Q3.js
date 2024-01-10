@@ -1,3 +1,10 @@
+$(document).ready(function () {
+    $("#clockForm").submit(function (event) {
+        event.preventDefault();
+        addClock();
+    });
+});
+
 class Clock {
     constructor(hours, minutes, seconds, country) {
         this.hours = hours;
@@ -16,6 +23,45 @@ class Clock {
 
     formatTime(time) {
         return time < 10 ? `0${time}` : time;
+    }
+}
+
+let clocks = [];
+
+function addClock() {
+    const hours = parseInt($('#hours').val());
+    const minutes = parseInt($('#minutes').val());
+    const seconds = parseInt($('#seconds').val());
+    const country = $('#country').val();
+
+    const newClock = new Clock(hours, minutes, seconds, country);
+    clocks.push(newClock);
+
+    document.getElementById('clockForm').reset();
+    displayClocks();
+    return false;
+
+}
+
+function displayClocks() {
+
+    if (clocks.length != 5) {
+        return;
+    }
+
+    else {
+
+        const clockListDiv = document.getElementById('clockList');
+        clockListDiv.innerHTML = '';
+
+        clocks.forEach(clock_i => {
+            const clockDiv = document.createElement('div');
+            clockDiv.textContent = `Country: ${clock_i.country}, Time: ${clock_i.show()}, Seconds: ${clock_i.convertToSeconds()}`;
+            clockDiv.style.height = "20px"
+            clockListDiv.appendChild(clockDiv);
+
+        });
+        clocks.length = 0;
     }
 
 }

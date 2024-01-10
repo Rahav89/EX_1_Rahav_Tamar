@@ -4,46 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Clock</title>
-
     <link href="Q3.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="Q3.js" defer></script>
 </head>
 
 <body>
     <h1>Clock Form</h1>
     <div class="container">
-        <form id="colokForm">
+        <form id="clockForm">
 
             <div class="form-group">
-                <label for="hours">Hours: </label>
-                <input type="number" id="hours" required>
+                <label for="hours">Hours:</label>
+                <input type="number" id="hours" required min="0" max="23" />
             </div>
 
             <div class="form-group">
                 <label for="minutes">Minutes:</label>
-                <input type="number" id="minutes" required>
+                <input type="number" id="minutes" required min="0" max="59"/>
             </div>
 
             <div class="form-group">
                 <label for="seconds">Seconds:</label>
-                <input type="number" id="seconds" required>
+                <input type="number" id="seconds" required min="0" max="59"/>
             </div>
 
             <div class="form-group">
-                <label for="country">country:</label>
+                <label for="country">Country:</label>
                 <input type="text" id="country" required>
             </div>
 
-
-            <button type="button" class="btnManage" onclick="addClock()">Add Clock</button>
+            <input type="submit" class="btnManage" onclick="addClock()" value="Add Clock">
 
         </form>
     </div>
 
     <div id="clockList"></div>
-    
-    <script src="Q3.js"></script>
+
+
 </body>
 
 </html>

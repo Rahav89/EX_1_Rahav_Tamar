@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <label for="age"><span class="red-star">★ </span> Age:</label>
-                <input type="text" class="form-control" id="age" required="">
+                <input type="number" class="form-control" id="age" required="">
             </div>
 
             <div class="form-group">
@@ -38,9 +38,10 @@
                 <input type="text" class="form-control" id="image" required="">
             </div>
 
-            <input id="createDuck" type="button" value="Create Duck" onclick="createDuck()" class="btnManage">
         </form>
     </div>
+    
+    <input id="createDuck" type="button" value="Create Duck" onclick="createDuck()" class="btnManage">
 
     <div id="duckInfo"></div>
     <p id="duckQTime"></p>
